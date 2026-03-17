@@ -152,8 +152,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import contextily as ctx
 
-# Cargar shapefile de municipios
-capa_municipios = "/content/Municipios.shp"
+# Cargar GeoJSON de municipios
+capa_municipios = "data/municipios.geojson"
 gdf_municipios = gp.read_file(capa_municipios)
 
 # Definir municipios por nivel de alerta
@@ -230,7 +230,9 @@ plt.show()</code></pre>
         <pre><code class="language-python"># ── Mapa de amenaza de deslizamientos
 # ── de tierra · Norte de Santander
 
-# Reutiliza gdf_municipios cargado antes
+# Reutiliza gdf_municipios cargado antes:
+# capa_municipios = "data/municipios.geojson"
+# gdf_municipios  = gp.read_file(capa_municipios)
 
 red_alerts_list    = []
 orange_alerts_list = []
@@ -299,7 +301,7 @@ plt.show()</code></pre>
         <pre><code class="language-python"># ── Mapa de alertas hidrológicas por cuencas
 # ── Norte de Santander
 
-capa_cuencas = "/content/Cuencas.shp"
+capa_cuencas = "data/cuencas.geojson"
 gdf_cuencas  = gp.read_file(capa_cuencas)
 
 print(gdf_cuencas['NOM_CUENCA'].unique())
