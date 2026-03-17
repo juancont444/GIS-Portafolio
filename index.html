@@ -301,7 +301,7 @@ plt.show()</code></pre>
         <pre><code class="language-python"># ── Mapa de alertas hidrológicas por cuencas
 # ── Norte de Santander
 
-capa_cuencas = "data/cuencas.geojson"
+capa_cuencas = "data/Cuencas.geojson"
 gdf_cuencas  = gp.read_file(capa_cuencas)
 
 print(gdf_cuencas['NOM_CUENCA'].unique())
@@ -376,7 +376,7 @@ plt.show()</code></pre>
       <p>
         <code>index.html</code> — página principal del portfolio<br>
         <code>data/municipios.geojson</code> — polígonos de municipios (EPSG:4326)<br>
-        <code>data/cuencas.geojson</code> — polígonos de cuencas (EPSG:4326)<br>
+        <code>data/Cuencas.geojson</code> — polígonos de cuencas (EPSG:4326)<br>
         <code>boletin_hidroclimatico.py</code> — script original de Google Colab
       </p>
     </div>
@@ -535,8 +535,8 @@ async function initMapaMunicipios(mapId, loadingId, alertas) {
 async function initMapaCuencas(mapId, loadingId, alertas) {
   const loading = document.getElementById(loadingId);
   try {
-    const res  = await fetch('data/cuencas.geojson');
-    if (!res.ok) throw new Error('No se pudo cargar cuencas.geojson');
+    const res  = await fetch('data/Cuencas.geojson');
+    if (!res.ok) throw new Error('No se pudo cargar Cuencas.geojson');
     const data = await res.json();
 
     loading.style.display = 'none';
@@ -574,7 +574,7 @@ async function initMapaCuencas(mapId, loadingId, alertas) {
     loading.innerHTML = `
       <span style="color:#da3633">
         Error: ${err.message}<br>
-        <small>¿Está el archivo en data/cuencas.geojson?</small>
+        <small>¿Está el archivo en data/Cuencas.geojson?</small>
       </span>
     `;
   }
